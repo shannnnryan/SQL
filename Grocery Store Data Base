@@ -1,0 +1,37 @@
+-->Create a Grocery Store Database
+
+CREATE TABLE store (id INTEGER PRIMARY KEY, item TEXT, price INTEGER, popularity INTEGER, section TEXT);
+
+INSERT INTO store VALUES
+(1, "bananas", .65, 75, "produce"),
+(2, "cereal", 3.99, 85, "dry goods"),
+(3, "milk", 3.50, 65, "fridge"),
+(4, "yogurt", 1.80, 25, "fridge"),
+(5, "cheese", 1.75, 45, "fridge"),
+(6, "oranges", .98, 55, "produce"),
+(7, "pasta", 1.25, 70, "dry goods"),
+(8, "chips", 3.25, 48, "dry goods"),
+(9, "corn", .79, 32, "produce"),
+(10, "french fries", 5.99, 78, "frozen"),
+(11, "ground turkey", 6.79, 80, "meat"),
+(12, "bread", 2.15, 25, "dry goods"),
+(13, "cards", 4.99, 20, "paper goods"),
+(14, "candy", 2, 45, "dry goods"),
+(15, "watermelon", 5.99, 58, "produce");
+
+-->Display data and order by price.
+SELECT * FROM store
+ORDER BY price desc;
+
+--->Order items in the store by popularity.
+SELECT * FROM store
+ORDER BY popularity ASC;
+
+-->What are the most popular items in the store?
+SELECT item, price, popularity
+FROM store
+ORDER BY popularity DESC
+limit 5; 
+
+-->Note average produce price from the store.
+SELECT AVG(price) produce FROM store;
